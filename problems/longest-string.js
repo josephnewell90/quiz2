@@ -3,16 +3,20 @@
 function longestString(arr) {
   var longestString = '';
   var currentString = '';
+  
   for (var i = 0; i < arr.length; i++)
   {
     currentString = arr[i];
-    console.log(currentString);
     if (typeof currentString === 'string')
     {
-      longestString += arr[i];
+
+      if (currentString.length > longestString.length)
+      {
+        longestString = currentString;
+      }
     }
-    console.log(longestString);
   }
+  return longestString;
 }
 
 module.exports = longestString;
